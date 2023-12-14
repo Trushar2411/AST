@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import rclpy
 import py_trees as pt
 import py_trees_ros as ptr
 from geometry_msgs.msg import Twist
@@ -19,7 +18,6 @@ class Rotate(pt.behaviour.Behaviour):
 
     def setup(self, **kwargs):
         self.logger.info("[ROTATE] setting up rotate behavior")
-        
         try:
             self.node = kwargs['node']
             self.publisher = self.node.create_publisher(Twist, self.topic_name, 10)
