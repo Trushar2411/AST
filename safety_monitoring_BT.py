@@ -46,9 +46,7 @@ def main():
         tree.shutdown()
         rclpy.try_shutdown()
         sys.exit(1)
-    
     tree.tick_tock(period_ms=100)    
-
     try:
         rclpy.spin(tree.node)
     except (KeyboardInterrupt, rclpy.executors.ExternalShutdownException):
@@ -56,6 +54,7 @@ def main():
     finally:
         tree.shutdown()
         rclpy.try_shutdown()
+
 
 if __name__ == '__main__':
     main()
